@@ -1,0 +1,29 @@
+
+body {
+    background: linear-gradient(to bottom right, #ffe0f0, #fff7fa);
+    font-family: sans-serif;
+    text-align: center;
+    padding: 2em;
+    color: #d81b60;
+}
+.container {
+    border: 2px solid #d81b60;
+    border-radius: 16px;
+    padding: 2em;
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 15px #f8bbd0;
+}
+button {
+    background-color: #f06292;
+    color: white;
+    border: none;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 12px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ec407a;
+}
