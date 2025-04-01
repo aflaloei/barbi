@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="he">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>הברבי של המלכה</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הברבי של המלכה</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>👑 הברבי של המלכה 👠</h1>
-        <p>התחל לשחק עכשיו במשימות, פנטזיות ושוברים!</p>
-        <button onclick="startGame()">התחל משחק</button>
-        <div id="gameArea" style="display:none;">
-            <p id="cardText"></p>
-            <button onclick="nextCard()">קלף הבא</button>
-        </div>
+  <div class="app">
+    <div class="screen" id="start-screen">
+      <h1>👑 הברבי של המלכה 👠</h1>
+      <div class="instructions">
+        <p>1. המלכה בוחרת קטגוריה</p>
+        <p>2. שלפו קלף וקראו בקול</p>
+        <p>3. הברבי מבצעת – ללא ויכוח</p>
+        <p>4. לחצו “+ נקודה” אם בוצע</p>
+        <p>5. אפשר “דלג” אם המלכה מאשרת</p>
+        <p>6. הגעה ל־10 נקודות = פרס</p>
+        <p>7. התחלה מחדש? תמיד אפשר</p>
+        <button onclick="startGame()">🚀 התחילו את המשחק</button>
+      </div>
     </div>
-    <script src="app.js"></script>
+
+    <div class="screen" id="game-screen" style="display:none;">
+      <h2 id="category-title">בחר קטגוריה</h2>
+      <div class="buttons">
+        <button onclick="setCategory('questions')">❓ שאלות</button>
+        <button onclick="setCategory('tasks')">🔥 משימות</button>
+        <button onclick="setCategory('fantasies')">💭 פנטזיות</button>
+        <button onclick="setCategory('punishments')">⚠️ עונשים</button>
+        <button onclick="setCategory('coupons')">🎁 שוברים</button>
+      </div>
+
+      <div class="card" id="card">הקלף יופיע כאן...</div>
+
+      <div class="actions">
+        <button onclick="drawCard()">🔀 שלוף קלף</button>
+        <button onclick="skipCard()">⏭ דלג</button>
+        <button onclick="resetGame()">🔄 התחלה מחדש</button>
+        <button onclick="addPoint()">⭐ + נקודה</button>
+      </div>
+
+      <div class="score">
+        נקודות הברבי: <span id="points">0</span> ⭐
+        <div id="icon">💗</div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
